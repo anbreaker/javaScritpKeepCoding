@@ -32,10 +32,15 @@ const numRomanos = ["I","II","III","IV","V","VI","VII","VIII","IX"]
 let numPeli = parseInt(prompt("¿Qué pelicula de Star Wars Quieres ver?"));
 
 function convertirRomanoToArabe(numPeli){
-    if(numRomanos.indexOf(numPeli) != -1){
+    if(numRomanos.includes(numPeli) === true){
         numPeli = (numRomanos.indexOf(numPeli) + 1);
         console.log('Ver si pongo esto CONVERSOR ->', numPeli);
-        eligeMovieStarWars(peliculasStarWars[numPeli])
+        for (let i = 0; i <= numRomanos.length; i++){
+            if (numRomanos[i] === numPeli){
+                numPeli = i
+                eligeMovieStarWars(peliculasStarWars[numPeli])
+            }
+        }
     } else{
         numPeli-=1
         eligeMovieStarWars(peliculasStarWars[numPeli])
