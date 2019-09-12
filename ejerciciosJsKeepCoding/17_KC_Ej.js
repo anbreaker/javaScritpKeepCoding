@@ -80,7 +80,7 @@ function buscarEmail(nombre){
 
 // function buscarEmail(nombre) {
 //     infoPersonas.find(function(element){
-//         return element= nombre.getEmail()
+//         return element.getEmail == nombre
 //     });
 // }
 
