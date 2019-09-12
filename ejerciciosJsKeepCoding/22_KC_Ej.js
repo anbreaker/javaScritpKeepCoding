@@ -43,7 +43,7 @@ function derechoVotar (infoPersonas){
 
         if (infoPersonas[key].getEdad() >= 18){
             conDerechoVoto.push(infoPersonas[key].getNombre())
-            document.write(`${conDerechoVoto[key]} <br>`)
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp ${conDerechoVoto[key]} <br>`)
         }
     }
 }
