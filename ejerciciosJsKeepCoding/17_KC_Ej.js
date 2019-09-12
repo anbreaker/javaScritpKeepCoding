@@ -10,47 +10,79 @@ encuentre un resultado válido.
             >>Bob - bob@gmail.com
             >>Entrada: Pablo
             >>Salida: pmarmol123@gmail.com
-*/            
+*/
 
 //Funcion constructor
 
-function Persona (nombre, email) {
+function Persona(nombre, email) {
     this.nombre = nombre;
     this.email = email;
 
-    this.getNombre = function () {
-        return `${this.nombre}`
-    }
+    this.getNombre = function() {
+        return `${this.nombre}`;
+    };
 
-    this.getEmail = function () {
-        return `${this.email}`
-    }
-    this.getInfo = function(){
-        return `${this.nombre} ${this.email}`
-    }
+    this.getEmail = function() {
+        return `${this.email}`;
+    };
+    this.getInfo = function() {
+        return `${this.nombre} ${this.email}`;
+    };
 }
 
-let Pedro = new Persona('Pedro', 'pedro.picapiedra@gmail.com')
-let Pablo = new Persona('Pablo', 'pmarmol123@gmail.com')
-let Bob = new Persona('Bob', 'bob@gmail.com')
-let infoPersonas = [Pedro,Pablo,Bob]
+let Pedro = new Persona("Pedro", "pedro.picapiedra@gmail.com");
+let Pablo = new Persona("Pablo", "pmarmol123@gmail.com");
+let Bob = new Persona("Bob", "bob@gmail.com");
+let infoPersonas = [Pedro, Pablo, Bob];
 
-function comenzar(){
-    let nombre = prompt('Dime un nombre:')
+function comenzar() {
+    let nombre = prompt("Dime un nombre:");
+    //let nombre = 'Pedro';
     buscarEmail(nombre);
 }
 
+function buscarEmail(nombre) {
+    let ok = false;
+    infoPersonas.forEach(function(element) {
+        if (element.getNombre() === nombre) {
+            console.log("Dentro del if", element);
+            element.getEmail();
+            ok = true;
+            document.write(element.getEmail());
+            return;
+        }
+    });
+    if (!ok) {
+        console.log("El nombre " + nombre + " no existe en la lista");
+        document.write("El nombre " + nombre + " no existe en la lista");
+        comenzar();
+    }
+}
+
+
+//Mi Intento de lograrlo...................
+/*
 function buscarEmail(nombre){
-    for (let p = 0; p <= infoPersonas.length; p++) {
+    let ok = false;
+    for (let key = 0; key <= infoPersonas.length; key++) {
         
-        if(infoPersonas[p].getNombre() === nombre){
-            console.log('Dentro del if', infoPersonas[p]);
-            nombre.getEmail();
-        }else{
+        if(infoPersonas[key].getNombre() === nombre){
+            console.log('Dentro del if', key.getEmail());
+            let key = true;
+            document.write(key.getEmail());
+            return key.getEmail();
+        }else if (!ok) {
             console.log('El nombre no existe en la lista');
             comenzar();
         }        
     }
 }
 
+// function buscarEmail(nombre) {
+//     infoPersonas.find(function(element){
+//         return element= nombre.getEmail()
+//     });
+// }
+
+*/
 comenzar();
