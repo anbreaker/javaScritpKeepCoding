@@ -36,7 +36,6 @@ let Jessica = new Persona ('Jessica', 26)
 
 let infoPersonas = [Bob,Jessica,Pedro,Pablo]
 let conDerechoVoto = []
-let nombre = 'Jessica'
 
 function derechoVotar (infoPersonas){
     document.write("Tienen derecho a voto: <br>")
