@@ -16,20 +16,24 @@ deberá mostrar la media de calificaciones de cada persona.
 
 let personas = new Array();
 
-while(true){
-  let nombre = prompt("Dame el nombre de la persona a agregar ('terminar' para finalizar): ");
-  if(nombre.toLowerCase() === "terminar"){
-    break;
-  }
-  let media = 0;
-  for(i = 0; i <3; i++){
-    media += parseInt(prompt("Dame la calificacion " + i + " de " + nombre));
-  }
-  media = media / 3;
-  personas.push({"nombre":nombre, "media":media});
+while (true) {
+    let nombre = prompt(
+        "Dame el nombre de la persona a agregar ('terminar' para finalizar): "
+    );
+    if (nombre.toLowerCase() === "terminar") {
+        break;
+    }
+    let media = 0;
+    for (i = 0; i < 3; i++) {
+        media += parseInt(
+            prompt("Dame la calificacion " + i + " de " + nombre)
+        );
+    }
+    media = media / 3;
+    personas.push({ nombre: nombre, media: media });
 }
 
-for(i = 0; i <3; i++){
-//    document.write(personas[i].nombre + " - " +personas[i].media + "<br/>");
-   document.write(`${personas[i].nombre} - ${personas[i].media} "<br/>"`);
+for (i = 0; i < 3; i++) {
+    //    document.write(personas[i].nombre + " - " +personas[i].media + "<br/>");
+    document.write(`${personas[i].nombre} - ${personas[i].media} "<br/>"`);
 }
