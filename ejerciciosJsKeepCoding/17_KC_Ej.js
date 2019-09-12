@@ -45,15 +45,18 @@ function buscarEmail(nombre){
     for (let p = 0; p < infoPersonas.length; p++) {
 
         if(infoPersonas[p].getNombre() === nombre){
-            console.log('Dentro del if', infoPersonas[p]);
+            // console.log('Dentro del if', infoPersonas[p]);
             document.write(infoPersonas[p].getEmail())
             return;
         //Es esta condicon de debajo la que tambien me estaba llevando a errores.
-        }else if (infoPersonas[p] == infoPersonas.length){
-            document.write('El nombre no existe en la lista ')
+        }else if (p == (infoPersonas.length - 1)){
+            // console.log(p);
+            // console.log('Dentro del else');
+            alert('El nombre no existe en la lista ')
+            // console.log(('El nombre no existe en la lista '));
+            comenzar();
         }        
     }
-    comenzar();
 }
 
 comenzar();
