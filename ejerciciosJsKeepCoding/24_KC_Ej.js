@@ -16,17 +16,13 @@ descendente.
 let personas = new Array();
 
 while (true) {
-    let nombre = prompt(
-        "Dame el nombre de la persona a agregar ('terminar' para finalizar): "
-    );
-    if (nombre.toLowerCase() === "terminar") {
+    let nombre = prompt("Nombre persona a agregar ('terminar o t' finaliza): ");
+    if (nombre.toLowerCase() === "terminar" || nombre.toLowerCase() == "t") {
         break;
     }
     let media = 0;
     for (i = 0; i < 2; i++) {
-        media += parseInt(
-            prompt("Dame la calificacion " + i + " de " + nombre)
-        );
+        media += parseInt(prompt("Calificacion " + i + " de " + nombre));
     }
     media = media / 2;
     personas.push({ nombre: nombre, media: media });
@@ -34,12 +30,6 @@ while (true) {
 
 for (i = 0; i < 3; i++) {
     //document.write(personas[i].nombre + " - " +personas[i].media + "<br/>");
-    document.write(`${personas[i].nombre} - ${personas[i].media} "<br/>"`);
+    document.write(`${personas[i].nombre} - ${personas[i].media} <br/>`);
 }
 
-//recorrer array personas y ordenar por notas Metodo sort
-function ordenarPorNotas(personas) {
-    let personasSorted = personas.sort(function(a, b) {
-        return b.media > a.media;
-    });
-}
