@@ -7,39 +7,41 @@ Crear una clase Alumno con los siguientes atributos:
 
 //Funcion constructor
 
-class Alumno (matricula,nombre,apellidos,email,estatusInscrito) {
-    this.nombre = nombre;
-    this.matricula = matricula;
-    this.apellidos = apellidos;
-    this.email = email;
-    this.estatus_inscrito = false;
-    
-    this.getMatricula = function () {
+class Alumno {
+    constructor(matricula, nombre, apellidos, email, estatusInscrito) {
+        this.nombre = nombre;
+        this.matricula = matricula;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.estatusInscrito = estatusInscrito;
+    }
+
+    getMatricula = function() {
         return this.matricula;
-    }    
-    this.getNombre = function () {
+    };
+    getNombre = function() {
         return this.nombre;
-    }
-    this.getApellidos = function () {
+    };
+    getApellidos = function() {
         return this.apellidos;
-    }
-    this.getEmail = function () {
+    };
+    getEmail = function() {
         return this.email;
-    }
-    this.getEstatusInscrito = function () {
+    };
+    getEstatusInscrito = function() {
         return this.estatusInscrito;
-    }
-    this.getInfo = function(){
-        return `${this.nombre} ${this.edad}`
-    }
+    };
+    getInfo = function() {
+        return `${this.nombre} ${this.edad}`;
+    };
 }
 
 // matricula(Number),nombre(String),apellidos(String),email(String),estatusInscrito(boolean)
 
-let Sergio = new Alumno(1,'Sergio','Tardio', 'sergio@gmail.com', true)
-let Pablo = new Alumno(2,'Pablo', 'Escobar', 'gaviria@gmail.com', false)
-let Simao = new Alumno(3,'Simao', 'Espor', 'simao@gmail.com', true)
-let Javier = new Alumno(4,'Javier', 'Antunez', 'javier@gmail.com', false)
-let Jessica = new Alumno (5,'Jessica', 'Neves', 'jessica@gmail.com', true)
+let Sergio = new Alumno(1, "Sergio", "Tardio", "sergio@gmail.com", true);
+let Pablo = new Alumno(2, "Pablo", "Escobar", "gaviria@gmail.com", false);
+let Simao = new Alumno(3, "Simao", "Espor", "simao@gmail.com", true);
+let Javier = new Alumno(4, "Javier", "Antunez", "javier@gmail.com", false);
+let Jessica = new Alumno(5, "Jessica", "Neves", "jessica@gmail.com", true);
 
-let infoPersonas = [Javier,Jessica,Sergio,Pablo,Simao]
+let infoPersonas = [Javier, Jessica, Sergio, Pablo, Simao];
