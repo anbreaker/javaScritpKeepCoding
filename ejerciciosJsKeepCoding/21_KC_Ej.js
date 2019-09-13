@@ -17,10 +17,10 @@ tabla de multiplicar del 1 al 10.
 */
 
 let num = 5;
+let multiplicar = 0;
 
 function tablaDelNum(num) {
-    let multiplicar = [];
-
+   
     for (let i = 1; i <= 10; i++) {
         multiplicar += num * i;
         document.write(`${num} x ${i} = ${num * i}; <br>`, );
