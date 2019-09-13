@@ -7,7 +7,7 @@ Crear una clase Alumno con los siguientes atributos:
 
 //Funcion constructor
 
-function Alumno (matricula,nombre,apellidos,email,estatusInscrito) {
+class Alumno (matricula,nombre,apellidos,email,estatusInscrito) {
     this.nombre = nombre;
     this.matricula = matricula;
     this.apellidos = apellidos;
