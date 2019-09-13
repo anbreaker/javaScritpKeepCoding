@@ -8,8 +8,9 @@ programa deberá detenerse cuando el importe de la gaseosa haya sido completado 
 determinar el sobrante.
 */
 
-let refresco = new Array();
-refresco = new Array({"1":"KAS"},{"2":"Pepsi"}, {"3":"7Up"});
+//Clave:Valor
+let refresco = new Array({"name":"KAS"},{"name":"Pepsi"},{"name":"7Up"});
+// let refresco2 = new Array("KAS","Pepsi","7Up");
 
 function seleccionarBebida(refresco){
      while(true){
@@ -24,7 +25,7 @@ function seleccionarBebida(refresco){
 
 function monedasAceptadas(importe) {
     if (importe != 1 && importe != 10 && importe != 20 && importe != 50) {
-        alert("Solo acepto monedas de 1, 10c, 20c y 50c");
+        alert("Solo acepto monedas de 1c, 10c, 20c y 50c");
         return false;
     } else {
         return true;
@@ -32,18 +33,19 @@ function monedasAceptadas(importe) {
 }
 
 function entrega(refresco, acumulado) {
-    alert(`Disfruta tu bebida. ${refresco} \n Tu cambio es de ${(acumulado - 100)}`);
+    alert(`Disfruta tu bebida. ${refresco["name"]} \n Tu cambio es de ${(acumulado - 100)}`);
+    // alert("prueba " + refresco);
 }
 
-function pagar(b) {
+function pagar(refresco) {
     acumulado = 0;
     while (true) {
         pagado = parseInt(prompt("Ingrese moneda: "));
         if (monedasAceptadas(pagado)) {
             if (pagado == 1) {
-                acumulado = acumulado + pagado * 100;
+                acumulado += pagado * 100;
             } else {
-                acumulado = acumulado + pagado;
+                acumulado += pagado;
             }
             if (acumulado >= 100) {
                 entrega(refresco, acumulado);
@@ -55,5 +57,5 @@ function pagar(b) {
     }
 }
 
-seleccionarBebida(refresco);
-pagar(refresco)
+let refrescoSeleccionado = seleccionarBebida(refresco);
+pagar(refrescoSeleccionado);
