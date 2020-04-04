@@ -8,11 +8,19 @@ En la misma clase Módulo deberá implementar métodos para
     >> buscar un alumno
     >> mostrar todos los alumnos con estatus_inscrito == True.
 */
+"use strict"
+let alumno 
 
-class Modulo {
+class Modulo extends Alumno{
     constructor(listadoAlumnos, fechaInicio, fechaFin) {
+        super(matricula, nombre, apellidos, email, estatusInscrito);
         this.listadoAlumnos = listadoAlumnos;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
+}
+
+// Metodo para agregar alumnos
+function agregarAlumno(){
+    listadoAlumnos.
 }
